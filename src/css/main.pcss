@@ -1,0 +1,491 @@
+$breakpointDesktopMiddle: 1272px;
+$mobile: 737px;
+$mobile-small: 420px;
+
+@font-face {
+    font-family: 'Raleway-Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Raleway-Bold'), local('Raleway-Bold'), url(../font/Raleway-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Lato Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Lato Bold'), local('Lato-Bold'), url(../font/Lato-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Lato Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato-Regular'), local('Lato-Regular'), url(../font/Lato-Regular.ttf);
+}
+
+body,
+html * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Lato Regular', sans-serif;
+}
+
+.page {
+    min-width: 320px;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    &__bg-image {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            background: url(../img/bg.jpg) center center fixed no-repeat;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            filter: blur(2px);
+            transform: scale(1.2);
+
+            @media (max-width: $mobile) {
+                background: url("../img/bg-mobile.jpg") center center fixed no-repeat;
+            }
+        }
+    }
+
+    &__content {
+        width: 680px;
+        padding: 25px 15px;
+        text-align: center;
+        z-index: 1;
+
+        @media (max-width: $mobile) {
+            width: 100%;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Lato Bold', sans-serif;
+            font-size: 34px;
+
+            @media (max-width: $mobile) {
+                font-size: 4.5vw;
+            }
+
+            @media (max-width: $mobile-small) {
+                font-size: 17px;
+            }
+        }
+
+        h2 {
+            color: #FFF;
+
+            span {
+                color: #312d2d;
+            }
+        }
+
+        h1 {
+            color: #FFF;
+            margin-bottom: 15px;
+
+            span {
+                color: #f9ff00;
+            }
+        }
+    }
+
+    &__discount-image {
+        width: 100%;
+    }
+
+    &__promocode {
+        font-family: 'Lato Bold', sans-serif;
+        font-size: 40px;
+        color: #FFF;
+        margin: 0 auto;
+        width: fit-content;
+        padding: 5px 55px;
+        border: solid 3px #f9ff00;
+        background-color: rgba(0, 20, 3, 0.5);
+
+        @media (max-width: $mobile) {
+            width: 50vw;
+            height: 8vw;
+            font-size: 4vw;
+            padding: 1vw 4vw;
+        }
+
+        @media (max-width: $mobile-small) {
+            width: 210px;
+            height: 40px;
+            font-size: 17px;
+            line-height: 25px;
+            padding: 4px;
+        }
+    }
+
+    &__wrapper-img {
+        position: relative;
+        margin: 0 auto;
+        display: block;
+
+        img {
+            width: 100%;
+        }
+
+        &_mobile {
+            display: none;
+        }
+
+        @media (max-width: $mobile) {
+            margin: 0;
+        }
+    }
+
+    &__img-desktop {
+        display: block;
+
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+
+    &__img-mobile {
+        display: none;
+
+        @media (max-width: $mobile) {
+            display: block;
+        }
+    }
+
+    &__wrapper-btn {
+        padding: 30px 0 45px;
+
+        @media (max-width: $mobile) {
+            padding: 0;
+            padding-top: 20px;
+        }
+    }
+
+    &__button {
+        background-color: #f9ff00;
+        color: #000;
+        text-transform: uppercase;
+        font-size: 35px;
+        display: block;
+        border-radius: 15px;
+        box-shadow: 10px 10px 10px 0 rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 370px;
+        height: 70px;
+        line-height: 70px;
+        margin: 0 auto;
+        text-decoration: none;
+        font-family: 'Lato Bold', sans-serif;
+        box-sizing: border-box;
+
+        @media (max-width: $mobile) {
+            display: none;
+        }
+
+        &_mobile {
+            display: none;
+
+            @media (max-width: $mobile) {
+                padding: 0 18px;
+                display: flex;
+            }
+        }
+
+        &:hover {
+            background-color: #e7eb00;
+        }
+
+        @media (max-width: $mobile) {
+            position: relative;
+            margin: 0 22px;
+            width: auto;
+            font-size: 25px;
+            min-height: 55px;
+            align-items: center;
+            justify-content: center;
+            height: 11vw;
+        }
+    }
+}
+
+.sections-wrap {
+    position: relative;
+    z-index: 1;
+    background-color: #FFF;
+}
+
+.notes {
+    font-size: 16px;
+    color: #7a7a7a;
+    padding: 25px;
+    box-sizing: border-box;
+
+    @media (max-width: $breakpointDesktopMiddle) {
+        font-size: 14px;
+    }
+
+    @media (max-width: $mobile) {
+        font-size: 15px;
+        max-width: 100%;
+        margin: 0;
+        padding: 13vw 20px 15px;
+    }
+
+    &__item {
+        display: flex;
+        padding-bottom: 4px;
+    }
+}
+
+.links {
+    padding: 25px;
+    display: block;
+
+    @media (max-width: $mobile) {
+        text-align: left;
+        padding: 15px 20px;
+    }
+
+    a {
+        color: #258a35;
+        font-size: 18px;
+        font-family: 'Lato Bold', sans-serif;
+        text-decoration: none;
+        border-bottom: 2px #258a35 solid;
+        margin-right: 30px;
+        order: 2;
+
+        &:hover {
+            color: #797979;
+            border-bottom: 2px #797979 solid;
+        }
+
+        @media (max-width: $mobile) {
+            margin: auto auto 20px 0;
+        }
+    }
+
+    &__modal {
+        font-size: 18px;
+        font-family: 'Lato Bold', sans-serif;
+        color: #797979;
+        border-bottom: 2px #797979 dotted;
+        display: inline-block;
+        cursor: pointer;
+        order: 1;
+
+        &:hover {
+            color: #258a35;
+            border-bottom: 2px #258a35 dotted;
+        }
+
+        @media (max-width: $mobile) {
+            margin: auto auto 20px 0;
+        }
+    }
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0 55px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+
+    @media (max-width: $mobile) {
+        padding-top: 50px;
+    }
+
+    &__tag {
+        color: #223027;
+        font-size: 25px;
+        font-family: 'Lato Bold', sans-serif;
+    }
+
+    &__social-networks {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 25px auto 40px;
+
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__social-buttons {
+        width: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &__download {
+        display: flex;
+        justify-content: space-between;
+        width: 270px;
+        margin: 0 auto 20px;
+    }
+
+    &__title {
+        font-family: 'Lato Regular', sans-serif;
+        font-size: 17px;
+        text-align: center;
+
+        @media (max-width: $mobile) {
+            display: none;
+        }
+    }
+}
+
+#overlay {
+    z-index: 30;
+    position: fixed;
+    background-color: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    overflow: hidden;
+}
+
+.сonditions {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 40;
+    align-items: center;
+    justify-content: center;
+    color: #7f7f7f;
+
+    &__wrapper {
+        background-color: #fff;
+        width: 80vw;
+        left: 0;
+        padding: 35px 30px;
+        overflow: hidden;
+        position: relative;
+        margin-top: 5%;
+        border-radius: 1px;
+
+        p {
+            padding-bottom: 15px;
+        }
+
+        @media (max-width: $mobile) {
+            padding: 15px;
+            width: 90vw;
+
+            p {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    &__content {
+        overflow-y: scroll;
+        height: 550px;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+
+        @media (max-width: $mobile) {
+            height: 200px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+    }
+
+    &__title {
+        font-family: 'Raleway-Bold', sans-serif;
+        color: #000;
+        font-size: 30px;
+        text-align: center;
+        padding-bottom: 15px;
+
+        @media (max-width: $ mobile) {
+            font-size: 24px;
+            padding-top: 40px;
+        }
+    }
+
+    &__sub-title {
+        font-size: 22px;
+        font-family: 'Lato Bold', sans-serif;
+        color: #000;
+        padding-top: 16px;
+    }
+
+    ol li ul li {
+        color: #7f7f7f;
+        font-size: 16px;
+        font-family: 'Lato Regular', sans-serif;
+        display: flex;
+    }
+
+    ol li ul {
+        margin-top: 26px;
+        list-style: none;
+        list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+
+        @media (max-width: $mobile) {
+            padding-left: 0;
+        }
+
+        span {
+            padding-right: 5px;
+        }
+    }
+
+    ol {
+        margin-bottom: 30px;
+
+        @media (max-width: $mobile) {
+            padding-left: 25px;
+        }
+    }
+
+    a {
+        color: #7f7f7f;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
